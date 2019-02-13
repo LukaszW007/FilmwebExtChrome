@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "Filmweb_Search",
+  "version": "1.0",
+  "description": "Adds Filmweb search option in context menu",
+  "icons": {
+    "48": "icons/Filmweb_icon48x48.png",
+    "96": "icons/Filmweb_icon96x96.png"
+  },
+  "background": {
+    "scripts": [
+      "filmwebExt.js"
+    ],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "filmwebExt.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "<all_urls>",
+    "contextMenus"
+  ]
+}
